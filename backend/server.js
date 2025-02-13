@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "http://localhost:5173", 
+  origin: "https://mern-app-btfqarbmg0bfceh8.southeastasia-01.azurewebsites.net", 
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true 
 }));
