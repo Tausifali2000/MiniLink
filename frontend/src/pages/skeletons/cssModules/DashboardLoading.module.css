@@ -1,0 +1,56 @@
+.header {
+  margin-top: 3%;
+  height: 50px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  width: 400px;
+  margin-bottom: 10px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.pad {
+  padding: 44px;
+}
+
+.content {
+  display: flex;
+  width: 80%;
+  
+  gap: 3rem;
+  
+}
+
+.body {
+  margin-top: 3%;
+  height: 300px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  width: 40rem;
+  margin-bottom: 10px;
+  animation: pulse 2.5s ease-in-out infinite;
+
+}
+
+
+
+
+@keyframes pulse {
+  0% {
+    background-color: #f7f7f7;
+  }
+  20% {
+    background-color: #eaeaea;
+  }
+  40% {
+    background-color: #f1f1f1;
+  }
+  60% {
+    background-color: #eaeaea;
+  }
+  80% {
+    background-color: #f7f7f7;
+  }
+  100% {
+    background-color: #f7f7f7;
+  }
+}

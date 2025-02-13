@@ -1,0 +1,356 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background: white;
+  position: relative;
+  width: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+
+  height: 600px;
+
+}
+
+.fixbody {
+
+  padding: 0px 20px;
+
+}
+
+.header {
+  display: flex;
+  padding: 0px 20px;
+  height: 55px;
+  background-color: #3B3C51;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #3B3C51;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.required {
+  color: red;
+}
+
+.input,
+.textarea,
+.datetime {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.datetime img {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: none;
+  height: 80px;
+}
+
+.switchRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.switch input:checked+.slider {
+  background-color: #0052cc;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.switch input:checked+.slider:before {
+  transform: translateX(14px);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  background-color: #f5f5f5;
+  bottom: 0;
+}
+
+.clearButton {
+
+  color: #3B3C51;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.submitButton {
+  background: #1B48DA;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.submitButton:hover {
+  background: #003f9f;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.errormsg {
+  color: red;
+  margin-bottom: 15px;
+  margin-top: -13px;
+  font-size: 12px;
+}
+
+.errorBorder {
+  border: 1px solid red;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinnerText {
+
+  font-size: 16px;
+  color: white;
+}
+
+
+
+
+@media screen and (max-width: 650px) {
+
+  .dialog {
+
+    width: 75%;
+    height: 65%;
+
+  }
+
+  .header {
+
+    padding: 0px 20px;
+    height: 35px;
+
+
+    margin-bottom: 16px;
+  }
+
+  .header h3 {
+
+    font-size: 12px;
+
+  }
+
+  .closeButton {
+
+    font-size: 12px;
+
+  }
+
+  .form label {
+
+    font-size: 10px;
+
+  }
+
+  .input,
+  .textarea,
+  .datetime {
+    width: 100%;
+    height: 20px;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+
+  .input::placeholder {
+    font-size: 12px;
+  }
+
+  .textarea {
+    resize: none;
+    height: 50px;
+  }
+
+  .switch {
+
+    width: 20px;
+    height: 12px;
+  }
+
+  .slider {
+
+    border-radius: 13px;
+
+  }
+
+
+  .slider:before {
+
+    height: 7px;
+    width: 7px;
+
+  }
+
+  .switch input:checked+.slider:before {
+    transform: translateX(7px);
+  }
+
+  .errormsg {
+
+    font-size: 8px;
+  }
+
+
+  .errorBorder {
+    border: 1px solid red;
+  }
+
+
+
+  .clearButton {
+
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+
+  .submitButton {
+
+    padding: 6px 10px;
+    border-radius: 4px;
+
+    font-size: 10px;
+
+
+  }
+
+  .spinner {
+
+    width: 10px;
+    height: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+
+  }
+
+
+}

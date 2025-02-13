@@ -1,0 +1,237 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.dialogBox {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 496px;
+  height: 222px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+.shrink {
+  animation: shrinkDown 0.3s ease-in-out;
+}
+
+.closeButton {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #000;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.cancelButton,
+.confirmButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: 179px;
+  height: 34px;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cancelButton {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+.confirmButton {
+  background-color: #2563eb;
+  color: white;
+}
+
+.confirmButton:hover {
+  background-color: #1d4ed8;
+}
+
+.confirmButton:disabled,
+.cancelButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 15px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrinkDown {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinnerText {
+
+  font-size: 16px;
+  color: white;
+}
+
+
+@media screen and (max-width: 650px) {
+
+  .dialogBox {
+
+
+
+    padding: 20px;
+    width: 75%;
+    height: 20%;
+
+  }
+
+  .closeButton {
+
+    top: 8px;
+    right: 12px;
+
+    font-size: 12px;
+
+  }
+
+  .message {
+    font-size: 12px;
+
+    margin-bottom: 12px;
+
+  }
+
+  .cancelButton,
+  .confirmButton {
+
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: 100px;
+    height: 28px;
+
+    font-size: 10px;
+
+  }
+
+  .spinner {
+
+    width: 14px;
+    height: 14px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+
+  }
+
+
+}

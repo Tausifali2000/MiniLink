@@ -1,0 +1,26 @@
+.success-toast, .error-toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 2px solid #1B48DA;
+  width: auto;
+  min-height: 42px;
+  min-width: 180px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  padding: 10px !important;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: black !important;
+
+  
+ 
+}
+
+
+.error-toast {
+  border: 2px solid red;
+}
+
+

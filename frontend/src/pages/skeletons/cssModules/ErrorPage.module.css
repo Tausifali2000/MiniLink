@@ -1,0 +1,66 @@
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8d7da;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeInBackground 2s ease-in-out;
+}
+
+.errorBox {
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideInFromTop 1s ease-out;
+}
+
+.errorTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #721c24;
+  margin-bottom: 15px;
+}
+
+.errorMessage {
+  font-size: 18px;
+  color: #721c24;
+  margin-bottom: 20px;
+}
+
+.errorButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.errorButton:hover {
+  background-color: #c82333;
+}
+
+@keyframes fadeInBackground {
+  0% {
+    background-color: #f8d7da;
+  }
+  100% {
+    background-color: #f8d7da;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
