@@ -5,17 +5,17 @@ import { useState } from "react";
 
 
 const Signup = () => {
-//Store functions
+  //Store functions
   const { signup, error, isSigningUp } = useAuthStore();
-  
-//States
+
+  //States
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setMobNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+
   //UseNavigate Hooks
   const navigate = useNavigate();
 
@@ -35,9 +35,9 @@ const Signup = () => {
 
     // Validate the email format
     if (emailRegex.test(value)) {
-      setEmailErrorMessage(''); 
+      setEmailErrorMessage('');
     } else {
-      setEmailErrorMessage('Please enter a valid email address'); 
+      setEmailErrorMessage('Please enter a valid email address');
     }
   };
 
@@ -46,10 +46,10 @@ const Signup = () => {
   const handleMobileChange = (e) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
-      setMobNumber(value); 
+      setMobNumber(value);
     }
   };
-  
+
   //OnClicks
   const handleKeyDown = (e) => {
     const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'];
@@ -58,19 +58,18 @@ const Signup = () => {
     }
 
   };
+
   const handleSignup = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-     await signup({ name, email, number, password, confirmPassword });
-      navigate("/")
-  };
 
-  const handlePasswordBlur = () => {
-    if (password && confirmPassword && password !== confirmPassword) {
-      setPasswordErrorMessage('Passwords do not match');
-    } else {
-      setPasswordErrorMessage('');
+    if (!email.trim()) {
+      setEmailErrorMessage('Email is required');
+      return;
     }
+
+    await signup({ name, email, number, password, confirmPassword });
+    navigate("/");
   };
 
 
@@ -96,8 +95,8 @@ const Signup = () => {
       </div>
 
       {/*Left section */}
-      
-    <div className={styles.left}></div>
+
+      <div className={styles.left}></div>
       {/*right section */}
       <div className={styles.right}>
 
@@ -118,7 +117,8 @@ const Signup = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onBlur={handleEmailChange}
-            style={{ borderColor: emailErrorMessage ? 'red' : '#3B3C51' }} 
+            required
+            style={{ borderColor: emailErrorMessage ? 'red' : '#3B3C51' }}
           />
           {emailErrorMessage && <div className={styles.errormsg}>{emailErrorMessage}</div>}
           {error?.field === "email" && <div className={styles.errormsg}>{error.message}</div>}
